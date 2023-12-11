@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:valuyuta_kursi/data/language_data.dart';
 import 'package:valuyuta_kursi/domain/models/language_model.dart';
 import 'package:valuyuta_kursi/screens/loading_screen.dart';
 import '../core/apis.dart';
@@ -380,66 +379,6 @@ class _HomePageState extends State<HomePage> {
                                 style: const TextStyle(
                                   fontSize: 25, fontWeight: FontWeight.w600,
                                 ),),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(height: 20,),
-                        Center(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              TextButton(
-                                onPressed: () async {
-                                  await languageRepository.storeLanguage(
-                                      LanguageModel(
-                                          valyutaConvertor: English
-                                              .currencyConverter,
-                                          description: English.description,
-                                          amount: English.amount,
-                                          amountConvert: English
-                                              .convertedAmount,
-                                          valyutaRate: English.rate));
-                                  setState(() {});
-                                  getAllData();
-                                },
-                                child: const Text("ENG", style: TextStyle(
-                                    fontSize: 20, color: Colors.red),),
-                              ),
-                              const SizedBox(width: 5,),
-                              TextButton(
-                                onPressed: () async {
-                                  await languageRepository.storeLanguage(
-                                    LanguageModel(
-                                        valyutaConvertor: Russia
-                                            .currencyConverter,
-                                        description: Russia.description,
-                                        amount: Russia.amount,
-                                        amountConvert: Russia.convertedAmount,
-                                        valyutaRate: Russia.rate),
-                                  );
-                                  setState(() {});
-                                  getAllData();
-                                },
-                                child: const Text("RUS", style: TextStyle(
-                                    fontSize: 20, color: Colors.blue),),
-                              ),
-                              const SizedBox(width: 5,),
-                              TextButton(
-                                onPressed: () async {
-                                  await languageRepository.storeLanguage(
-                                      LanguageModel(
-                                          valyutaConvertor: Uzbek
-                                              .currencyConverter,
-                                          description: Uzbek.description,
-                                          amount: Uzbek.amount,
-                                          amountConvert: Uzbek.convertedAmount,
-                                          valyutaRate: Uzbek.rate));
-                                  setState(() {});
-                                  getAllData();
-                                },
-                                child: const Text("UZB", style: TextStyle(
-                                    fontSize: 20, color: Colors.black),),
-                              ),
                             ],
                           ),
                         ),
